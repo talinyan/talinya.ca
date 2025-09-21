@@ -15,8 +15,13 @@ function App() {
 	}, []);
 
 	return (
-		<div>
-			<h1>{message || 'Loading...'}</h1>
+		<div className='w-screen'>
+			<div className='ml-auto mr-auto w-1/2 text-center'>
+				<h1 className='text-red-500'>hiii</h1>
+				<h2>wip :D</h2>
+
+				<p className='text-orange-500'>{message || ''}</p>
+			</div>
 		</div>
 	);
 }

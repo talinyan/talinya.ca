@@ -10,7 +10,7 @@ app.use(
 const PORT = 5000;
 
 app.get('/api/hello', (req, res) => {
-	res.send({ message: ':3' });
+	res.send({ message: 'from backend :3' });
 });
 
 app.listen(PORT, () => {
