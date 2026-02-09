@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import type { ProjectInfo, WorkshopInfo } from '../types';
+import type { ProjectInfo, WorkshopInfo } from '../config/types';
 import { getWorkshopStats } from '../api/getWorkshopStats';
 import { Eye, Github, HardDriveDownload, Star } from 'lucide-react';
 
-const ProjectCard = ({ title, description, details, imgsrc }: ProjectInfo) => {
+const ProjectCard = ({ title, description, details, image }: ProjectInfo) => {
 	const [steamStats, setSteamStats] = useState<WorkshopInfo | null>(null);
 
 	useEffect(() => {
@@ -18,10 +18,10 @@ const ProjectCard = ({ title, description, details, imgsrc }: ProjectInfo) => {
 	}, []);
 
 	return (
-		<div className='border rounded-lg p-3 bg-neutral-900 grid grid-cols-[35%_65%] grid-rows-[75%_25%] gap-y-2'>
+		<div className='border rounded-lg p-3 bg-neutral-900 grid grid-cols-[35%_65%] grid-rows-[80%_20%] gap-y-2 gap-x-1'>
 			{/* Image */}
 			<div className='shrink-0'>
-				<img src={imgsrc} alt={title} className='w-50 h-35 object-cover rounded-md' />
+				<img src={image} alt={title} className='w-50 h-38 object-cover rounded-md' />
 			</div>
 
 			{/* Title & Description */}
@@ -48,8 +48,8 @@ const ProjectCard = ({ title, description, details, imgsrc }: ProjectInfo) => {
 			)}
 
 			{/* Steam stats — right */}
-			{steamStats ? (
-				<div className='flex items-center gap-4 text-sm text-neutral-300 justify-self-end'>
+			{steamStats && (
+				<div className='flex items-center gap-4 mr-1 text-sm text-neutral-300 justify-self-end'>
 					<div className='flex items-center gap-1' title='Favourites'>
 						<Star className='w-4 h-4' />
 						{steamStats.faves}
@@ -65,8 +65,6 @@ const ProjectCard = ({ title, description, details, imgsrc }: ProjectInfo) => {
 						{steamStats.views}
 					</div>
 				</div>
-			) : (
-				<div>Loading stats...</div>
 			)}
 		</div>
 	);

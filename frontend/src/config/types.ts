@@ -2,7 +2,7 @@ export type ProjectInfo = {
 	id: number;
 	title: string;
 	description: string;
-	imgsrc: string;
+	image: string;
 
 	/** Extra details to include & handle in ProjectCard */
 	details?: {

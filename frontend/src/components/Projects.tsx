@@ -1,5 +1,5 @@
 // ProjectCard.jsx
-import { projects } from '../projects';
+import { projects } from '../config/projects';
 import ProjectCard from './ProjectCard';
 
 const Projects = () => {
