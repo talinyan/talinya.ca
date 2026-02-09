@@ -3,17 +3,22 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
-		"dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node src/index.ts\""
+		"dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node src/index.ts\"",
+		"build": "tsc",
+		"start": "node dist/index.js"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "MIT",
 	"description": "",
 	"dependencies": {
+		"@fastify/cors": "^11.2.0",
 		"cors": "^2.8.5",
 		"dotenv": "^16.4.5",
 		"express": "^4.21.0",
+		"fastify": "^5.7.4",
 		"mongoose": "^8.7.0",
+		"node-fetch": "^3.3.2",
 		"osu-web.js": "^2.5.0"
 	},
 	"devDependencies": {
