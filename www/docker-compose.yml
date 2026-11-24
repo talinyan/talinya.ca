@@ -1,0 +1,12 @@
+# docker compose up -d --build
+
+name: talinya-www
+
+services:
+  web:
+    build: .
+    image: talinya-www
+    container_name: talinya-www
+    ports:
+      - '127.0.0.1:8081:80'
+    restart: unless-stopped

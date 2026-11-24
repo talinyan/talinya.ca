@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+
+@theme {
+	--color-primary: #a78bfa;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	@apply bg-neutral-950 text-neutral-200 antialiased;
+}
